@@ -4,7 +4,7 @@ services:
   #frontend build
   frontend:
     build: .
-    image: cs56022218/dailyfix-frontend:latest
+    image: ${DOCKER_REPOSITORY}:latest
     environment:
       REACT_APP_BASE_URL: ${REACT_APP_BASE_URL}
     container_name: dailyfix-frontend

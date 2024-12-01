@@ -36,6 +36,7 @@ jobs:
     needs: build # จะรันหลังจาก build job เสร็จ
     env:
       REACT_APP_BASE_URL: ${{ secrets.REACT_APP_BASE_URL }}
+      DOCKER_REPOSITORY: ${{ secrets.DOCKER_REPOSITORY }}
     steps:
       - name: Checkout Code
         uses: actions/checkout@v2
