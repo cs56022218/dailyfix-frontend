@@ -7,6 +7,12 @@ services:
     image: ${DOCKER_REPOSITORY}:latest
     environment:
       REACT_APP_BASE_URL: ${REACT_APP_BASE_URL}
+      REACT_APP_API_KEY: ${REACT_APP_API_KEY}
+      REACT_APP_AUTH_DOMAIN: ${REACT_APP_AUTH_DOMAIN}
+      REACT_APP_PROJECT_ID: ${REACT_APP_PROJECT_ID}
+      REACT_APP_STORAGE_BUCKET: ${REACT_APP_STORAGE_BUCKET}
+      REACT_APP_MESSAGE_SENDING_ID: ${REACT_APP_MESSAGE_SENDING_ID}
+      REACT_APP_APP_ID: ${REACT_APP_APP_ID}
     container_name: dailyfix-frontend
     restart: always
     ports:
