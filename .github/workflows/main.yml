@@ -12,6 +12,16 @@ jobs:
     steps:
       - name: Checkout Code
         uses: actions/checkout@v2
+      - name: Create .env file
+        run: |
+          echo "REACT_APP_BASE_URL=${{ secrets.REACT_APP_BASE_URL }}" > .env
+          echo "REACT_APP_API_KEY=${{ secrets.REACT_APP_API_KEY }}" >> .env
+          echo "DOCKER_REPOSITORY=${{ secrets.DOCKER_REPOSITORY }}" >> .env
+          echo "REACT_APP_AUTH_DOMAIN=${{ secrets.REACT_APP_AUTH_DOMAIN }}" >> .env
+          echo "DOCKER_REPOSITORY=${{ secrets.DOCKER_REPOSITORY }}" >> .env
+          echo "REACT_APP_STORAGE_BUCKET=${{ secrets.REACT_APP_STORAGE_BUCKET }}" >> .env
+          echo "REACT_APP_MESSAGE_SENDING_ID=${{ secrets.REACT_APP_MESSAGE_SENDING_ID }}" >> .env
+          echo "REACT_APP_APP_ID=${{ secrets.REACT_APP_APP_ID }}" >> .env
 
       - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v2
@@ -42,7 +52,7 @@ jobs:
       REACT_APP_PROJECT_ID: ${{ secrets.DOCKER_REPOSITORY }}
       REACT_APP_STORAGE_BUCKET: ${{ secrets.REACT_APP_STORAGE_BUCKET }}
       REACT_APP_MESSAGE_SENDING_ID: ${{ secrets.REACT_APP_MESSAGE_SENDING_ID }}
-      REACT_APP_APP_ID: ${{ secrets.REACT_APP_MESSAGE_SENDING_ID }}
+      REACT_APP_APP_ID: ${{ secrets.REACT_APP_APP_ID }}
     steps:
       - name: Checkout Code
         uses: actions/checkout@v2
